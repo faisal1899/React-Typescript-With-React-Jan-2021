@@ -1,8 +1,11 @@
-const path = require('path');
+import path from 'path';
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const mode = process?.env?.NODE_ENV as webpack.Configuration['mode'] ?? 'development';
 
-module.exports = {
+const config: webpack.Configuration = {
+  mode,
   entry: {
     main: './src/index.tsx',
   },
@@ -61,3 +64,5 @@ module.exports = {
     }),
   ]
 };
+
+export default config;
