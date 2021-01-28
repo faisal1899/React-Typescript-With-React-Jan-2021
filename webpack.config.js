@@ -3,17 +3,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  // entry: {
-  //   main: './src/index.tsx'
-  // },
-  // output: {
-  //   filename: '[name]-[contenthash].bundle.js',
-  //   chunkFilename: '[name]-[contenthash].bundle.js',
-  //   path: path.resolve(__dirname, 'dist'),
-  // },
   entry: {
     main: './src/index.tsx',
-    // counter: './src/counter/Counter.tsx'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -21,10 +12,6 @@ module.exports = {
   },
   optimization: {
     runtimeChunk: 'single',
-    // splitChunks: {
-    //   chunks: 'all',
-    //   maxSize: 0
-    // }
     splitChunks: {
       cacheGroups: {
         vendor: {
